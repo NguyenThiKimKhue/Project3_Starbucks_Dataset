@@ -63,8 +63,9 @@ class SQLHelper:
 
         # Define Query
         query = text("""SELECT 
+                    city,
+                    country,
                     region, 
-                    country, 
                     COUNT(*) as store_count
                FROM 
                     starbucks_store_locations
@@ -82,6 +83,10 @@ class SQLHelper:
 
         # Define Query
         query = text("""SELECT 
+                    store_number,
+                    city,
+                    state_province,
+                    country,
                     latitude,
                     longitude,
                     country,

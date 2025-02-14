@@ -63,7 +63,7 @@ function makeBarPlot(data) {
     y: data.map(row => row.store_count), // Ensure you're using the correct data structure
     type: 'bar',
     marker: {
-      color: 'firebrick'
+      color: '#ffc300'
     },
   };
 
@@ -129,7 +129,7 @@ function createMap() {
     let heatLayer = L.heatLayer(heatArray, {
       radius: 20,
       blur: 35
-   }).addTo(myMap);
+   })
 
     // Step 3: CREATE THE LAYER CONTROL
     let baseMaps = {
@@ -150,7 +150,7 @@ function createMap() {
     });
 
     // Step 5: Add the Layer Control
-    L.control.layers(baseMaps, overlayMaps).addTo(myMap);
+    L.control.layers(baseMaps, overlayMaps, heatLayer).addTo(myMap);
   });
 }
 
