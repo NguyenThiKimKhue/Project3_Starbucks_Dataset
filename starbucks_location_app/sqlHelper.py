@@ -14,7 +14,7 @@ class SQLHelper:
 
     #########################################
      
-     def queryBarData(self):
+     def queryBarData(self, country_input):
         # Create our session (link) from Python to the DB
         conn = self.engine.connect()  # Raw SQL/Pandas
 
@@ -25,12 +25,12 @@ class SQLHelper:
                FROM
                     starbucks_store_locations
                WHERE
-                    country = 'US'
+                    country = :country_input
                GROUP BY
                     state_province
                ORDER BY
                     state_province ASC;""")
-        df = pd.read_sql(query, con=conn)
+        df = pd.read_sql(query, con=conn, params={"country_input": country_input})
         # Close the connection
         conn.close()
         return df
@@ -42,6 +42,7 @@ class SQLHelper:
         # Define Query
         query = text("""SELECT 
                     store_number,
+                    city,
                     country,
                     longitude,
                     latitude,
@@ -63,15 +64,18 @@ class SQLHelper:
 
         # Define Query
         query = text("""SELECT 
-                    city,
+                    region,
                     country,
-                    region, 
+                    state_province, 
                     COUNT(*) as store_count
                FROM 
                     starbucks_store_locations
                GROUP BY 
-                    region, 
-                    country""")
+                    region,
+                    country, 
+                    state_province
+               ORDER BY
+                    region, country, state_province""")
         df = pd.read_sql(query, con=conn)
         # Close the connection
         conn.close()

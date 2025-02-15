@@ -1,20 +1,171 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
+    background-color: #f3e5ab; /* Coffee Cream */
+    color: #3e2723; /* Dark Brown */
 }
 
-h1 {
+/* Navbar Section */
+.navbar {
+    background-color: #006241 !important; /* Starbucks Green */
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important; /* White Text */
+}
+
+.nav-link:hover {
+    color: #c0a080 !important; /* Light Coffee */
+}
+
+/* Header Section */
+header {
+    background-color: #8b5e3b; /* Rich Coffee Brown */
+    color: #ffffff; /* White text */
     text-align: center;
-    color: #333;
+    padding: 50px 0;
 }
 
-.container-fluid {
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+    background-color: #fff8e1; /* Light Cream */
+    padding: 50px 0;
+}
+
+#about h2 {
+    color: #3e2723; /* Dark Brown */
+    font-weight: bold;
+}
+
+/* Features Section */
+#features {
+    padding: 50px 0;
+}
+
+#features h3 {
+    color: #8b5e3b; /* Coffee Brown */
+    font-weight: bold;
+}
+
+#features p {
+    font-size: 1.1rem;
+}
+
+#data-visuals {
+    background-color: #006241 !important; /* Starbucks Green */
+    color: #ffffff; /* White text for contrast */
+    padding: 50px 0;
+}
+
+/* Form Styling */
+#filter-form {
+    background-color: #fff8e1;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#map_container {
-    border: 2px solid #007bff;
+#filter-btn {
+    background-color: #d4a373 !important; /* Coffee Tan */
+    color: #3e2723 !important;
+    border: none;
+    padding: 10px 15px;
     border-radius: 8px;
+    font-weight: bold;
+}
+
+#filter-btn:hover {
+    background-color: #b5835a !important; /* Darker Coffee Tan */
+}
+
+/*** Tables, Plots and Maps Styling ***/
+/**************************************/
+
+/* Table Styling */
+.table {
+    background-color: #fff8e1; /* Light Cream */
+    color: #3e2723; /* Dark Brown */
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0d9b5 !important; /* Soft Coffee Highlight */
+}
+
+.table th {
+    background-color: #8b5a2b; /* Coffee Brown */
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px;
+    background-color: #FFF8E1;
+    border-top: 1px solid #8b5e3b;
+}
+
+/* Bar Chart Styling */
+#plot {
+    background-color: #EDE0C8;
+    border: 3px solid #8b5e3b;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*Sunburst Styling*/
+#sunburst {
+    background-color: #f3e5ab; /* Coffee Cream */
+    border: 3px solid #8b5e3b; /* Rich Coffee Brown */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+.sunburst-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #3e2723; /* Dark Coffee Brown */
+    text-align: center;
+    margin-top: 15px;
+}
+
+/*Map Styling*/
+#map_container {
+    border: 5px solid #8b5e3b; /* Dark Coffee Border */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/*Plotly Styling*/
+.plotly .main-svg {
+    color: #3e2723; /* Dark Brown text */
+}
+
+.plotly .hovertext {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3e2723; /* Dark Coffee for hover text */
+}
+
+
+/**************************************/
+/* Footer Styling */
+footer {
+    background-color: #3e2723; /* Dark Coffee */
+    color: #ffffff;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
