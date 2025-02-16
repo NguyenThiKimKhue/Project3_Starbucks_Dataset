@@ -16,16 +16,32 @@ sqlHelper = SQLHelper()
 
 @app.route("/")
 def welcome():
-    return render_template("map.html")  # Ensure index.html is in the templates folder
+    return render_template("index.html")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/map")
+def map():
+    return render_template("map.html")
+
+@app.route("/about_us")
+def about_us():
+    return render_template("about_us.html")
+
+@app.route("/works_cited")
+def works_cited():
+    return render_template("works_cited.html")
 
 #################################################
 # API Routes
 #################################################
 
-@app.route("/api/v1.0/bar_data")
-def bar_data():
+@app.route("/api/v1.0/bar_data/<country_input>")
+def bar_data(country_input):
     # Execute queries
-    df = sqlHelper.queryBarData()
+    df = sqlHelper.queryBarData(country_input)
     # Turn DataFrame into List of Dictionary
     data = df.to_dict(orient="records")
     return jsonify(data)

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Starbucks Locations and Map</title>
+    <title>Starbucks App: Map</title>
     
     <!-- Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -29,64 +29,40 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/map">Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about_us">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/works_cited">Works Cited</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <h1>Starbucks Stores Location!</h1>
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">Starbucks App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMenu">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/map">Map</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/about_us">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/works_cited">Sources</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <h1>Starbucks Locations</h1>
         <div class="row">
+            <!-- Map -->
             <div class="col-md-12">
-                <label for="min-launches">Min Launches</label>
-                <input id="min-launches" name="min-launches" type="number" value="0" min="0">
-                <button id="filter-btn">Filter!</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div id="plot"></div>
-            </div>
-            <div class="col-md-6">
-                <table id="stores_table" class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Store Number</th>
-                            <th>Country</th>
-                            <th>City</th>
-                            <th>State/Province</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Data will be populated here -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="map_container" style="height: 500px;"></div>
+                <div id="map_container" style="height: 746px;"></div></div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="static/js/app.js"></script> <!-- Adjust path as necessary -->
+    <!-- Our JavaScript -->
+    <script type="text/javascript" src="static/js/map.js"></script> <!-- Adjust path as necessary -->
+
+  <footer class="text-white text-center py-3">
+      <p>&copy; 2025 Starbucks Location Data App. All rights reserved.</p>
+  </footer>
 </body>
 </html>
