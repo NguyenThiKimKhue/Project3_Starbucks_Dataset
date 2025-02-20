@@ -21,22 +21,38 @@
                     <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="/map">Map</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about_us">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/works_cited">Sources</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/works_cited">Sources</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <header class="hero-section text-white text-center py-5">
         <div class="container">
             <h1>Works Cited</h1>
-            <p class="lead">Lorem ipsum</p>
         </div>
     </header>
 
+    <section class="works-cited-section container py-4">
+        <div class="citation-box p-4">
+            <ul class="citation-list">
+                <li><a href="https://www.kaggle.com/datasets/omarsobhy14/starbucks-store-location-2023" target="_blank" rel="noopener noreferrer">Starbucks 2023 Dataset</a></li>
+                <li><a href="https://www.kaggle.com/datasets/andradaolteanu/country-mapping-iso-continent-region" target="_blank" rel="noopener noreferrer">Country Mapping Dataset</a></li>
+                <li><a href="https://wiscnews.com/news/nation-world/starbucks-menu-changes-ceo-brian-niccol/article_e0743cea-59b9-5f44-ae77-8f13a23cb022.html" target="_blank" rel="noopener noreferrer">"About This Project" Image</a></li>
+                <li><a href="https://www.businessinsider.com/starbucks-pumpkin-spice-latte-does-not-return-middle-east-2020-2020-9" target="_blank" rel="noopener noreferrer">"Global Concentrations" Image</a></li>
+                <li><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
+                <li>And All of The Provided Bootcamp Resources</li>
+            </ul>
+        </div>
+    </section>
 
     <footer class="text-white text-center py-3">
         <p>&copy; 2025 Starbucks Location Data App. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            document.getElementById("navbarMenu").classList.toggle("show");
+        });
+    </script>
 </body>
 </html>

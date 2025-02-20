@@ -27,6 +27,18 @@ body {
     color: #c0a080 !important; /* Light Coffee */
 }
 
+.navbar-toggler {
+    display: none !important; 
+}
+
+.collapse {
+    display: block !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
 /* Header Section */
 header {
     background-color: #8b5e3b; /* Rich Coffee Brown */
@@ -173,6 +185,45 @@ header p {
 
 
 /**************************************/
+/* Works Cited Styling */
+.works-cited-section {
+    background-color: #fff8e1; /* Light Cream */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.citation-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.citation-list {
+    color: #8b5e3b;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.citation-list li {
+    margin: 10px 0;
+}
+
+.citation-list a {
+    color: #8b5e3b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem; 
+}
+
+.citation-list a:hover {
+    text-decoration: underline;
+    color: #b5835a;
+}
+
 /* Footer Styling */
 footer {
     background-color: #3e2723; /* Dark Coffee */
