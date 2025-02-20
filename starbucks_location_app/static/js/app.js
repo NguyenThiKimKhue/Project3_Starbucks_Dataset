@@ -131,12 +131,16 @@ function makeSunBurst(data) {
   let labels = [];
   let parents = [];
   let values = [];
+  let ids = [];
   let colorMapping = {}; // Stores custom colors
+
 
   data.forEach(row => {
     let { region, country, state_province, store_count } = row;
 
     // Create a mapping to use the country code instead of "Region-Country"
+    let id = `${state_province}-${country}-${region}`;
+    let parent = `${country}-${region}`;
     let countryLabel = `${region}-${country}`; // Internal tracking
     let displayCountryLabel = country; // Display-only (e.g., "GB" instead of "Europe-GB")
 
@@ -158,8 +162,9 @@ function makeSunBurst(data) {
 
     // Add state/province level data
     labels.push(uniqueStateLabel);
-    parents.push(displayCountryLabel);
+    parents.push(parent);
     values.push(store_count);
+    ids.push(id);
   });
 
   // **Define Region Colors**
@@ -186,10 +191,13 @@ function makeSunBurst(data) {
   Object.keys(countryValues).forEach(countryLabel => {
     let displayCountryLabel = countryLabelMap[countryLabel]; // Extract country code (e.g., "GB")
     let region = countryLabel.split("-")[0]; // Extract region
+    let id = `${displayCountryLabel}-${region}`;
+    let parent = `${region}`;
 
     labels.push(displayCountryLabel);
-    parents.push(region);
+    parents.push(parent);
     values.push(countryValues[countryLabel]);
+    ids.push(id);
 
     // Assign the region color to the country
     let countryColor = regionColors[region] || "#AAAAAA"; 
@@ -201,10 +209,13 @@ function makeSunBurst(data) {
     labels.push(region);
     parents.push(""); // Root node
     values.push(regionValues[region]);
+    ids.push(region);
+
 
     // Assign region colors
     colorMapping[region] = regionColors[region] || "#777777";
   });
+
 
   // Assign lighter shades for states/provinces
   labels.forEach(label => {
@@ -220,6 +231,12 @@ function makeSunBurst(data) {
 
   // Generate a colorscale based on regions
   let nodeColors = labels.map(label => colorMapping[label] || "#CCCCCC"); // Default gray if no color
+  
+  ids.reverse();
+  labels.reverse();
+  parents.reverse();
+  values.reverse();
+  nodeColors.reverse();
 
   // Create Sunburst chart
   let trace = {
@@ -227,6 +244,7 @@ function makeSunBurst(data) {
     labels: labels,
     parents: parents,
     values: values,
+    ids: ids,
     branchvalues: "total", // Ensure hierarchy sums up correctly
     marker: {
       colors: nodeColors, // Only region colors, countries inherit from their region

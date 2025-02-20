@@ -20,13 +20,12 @@
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="/map">Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about_us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/about_us">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/works_cited">Sources</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="content">
         <header class="hero-section text-white text-center py-5">
             <div class="container">
@@ -38,7 +37,7 @@
         <section id="mission" class="py-5 text-center">
             <div class="container">
                 <h2>Our Mission</h2>
-                <p>We created this project to analyze Starbucks' presence globally. Our awareness only goes as far as the United States. We seek to find patterns in our data behind the distributions.</p>
+                <p>We created this project to analyze Starbucks' presence globally. Most of our awareness only goes as far as the United States and only a few other countries. We seek to find patterns in our data behind the distributions.</p>
             </div>
         </section>
 
@@ -47,19 +46,19 @@
             <div class="row">
                 <div class="col-md-3 team-member">
                     <h3>Gina Butler</h3>
-                    <p>Role & contribution details.</p>
+                    <p>Lead on PowerPoint, project write up, Data Cleaning</p>
                 </div>
                 <div class="col-md-3 team-member">
                     <h3>Kim Khue Nguyen</h3>
-                    <p>Role & contribution details.</p>
+                    <p>Spearheaded the Python application, SQLHelper, Javascript files, and readme.</p>
                 </div>
                 <div class="col-md-3 team-member">
                     <h3>Marcanthony Solorzano</h3>
-                    <p>Role & contribution details.</p>
+                    <p>Worked on data collection, preparation, debugging and fixing issues</p>
                 </div>
                 <div class="col-md-3 team-member">
                     <h3>Noah Stevens</h3>
-                    <p>Worked on style, visualization, and Sunburst Plot.</p>
+                    <p>Created most aspects of style and visualization on plots and webpage</p>
                 </div>
             </div>
         <div>
@@ -76,5 +75,11 @@
     <footer class="text-white text-center py-3">
         <p>&copy; 2025 Starbucks Location Data App. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            document.getElementById("navbarMenu").classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
