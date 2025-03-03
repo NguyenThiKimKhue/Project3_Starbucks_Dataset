@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css">
     <link href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Tableau Imports -->
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.8.0.min.js"></script>
 </head>
 
 <body>
@@ -75,6 +77,14 @@
           <div class="row mt-4">
               <div class="col-md-12">
                   <div id="sunburst" class="border p-3"></div>
+              </div>
+          </div>
+          <!-- Tableau Chart Embed -->
+          <div class="row mt-4">
+              <div class="col-md-12">
+                  <h2>Tableau charts and maps </h2>
+                  <h4>Here's an analysis tailored for Tableau charts and maps based on the Starbucks store location dataset:</h4>
+                  <a href="https://public.tableau.com/app/profile/kim.moots/viz/Tableau_17409851430990/Starbucksstorelocationanalysis?publish=yes" target="_blank">View Stores by Continent</a>
               </div>
           </div>
       </div>
